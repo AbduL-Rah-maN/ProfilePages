@@ -16,6 +16,12 @@ export const profileData = {
         company: "WebSolutions",
         period: "2020 - 2022",
         description: "Collaborated with design teams to create highly responsive React applications, improving UI/UX satisfaction by 30%."
+      },
+      {
+        title: "Backend Developer",
+        company: "TechSolutions",
+        period: "2018 - 2020",
+        description: "Collaborated with design teams to create highly responsive React applications, improving UI/UX satisfaction by 30%."
       }
     ],
     education: {
