@@ -5,4 +5,9 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ]
+  
 })

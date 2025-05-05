@@ -1,0 +1,6 @@
+p{
+    color: gray;
+}
+p:hover{
+    color: black;
+}
