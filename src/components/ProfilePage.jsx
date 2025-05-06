@@ -8,7 +8,7 @@ import {
   Tabs,
   Tab,
   IconButton,
-  Grid
+  Avatar
 } from "@mui/material";
 import { Add, Delete } from "@mui/icons-material";
 import { GitHub, LinkedIn, Edit } from "@mui/icons-material";
@@ -178,36 +178,31 @@ export function Profile() {
         </div>
       </header>
 
-      {/* Profile Header Section */}
+      
       <section className="max-w-6xl mx-auto mt-10 bg-white rounded-2xl shadow-lg p-8 flex justify-around md:flex-row items-center gap-6 animate-fade-in">
         <div className="relative inline-block"> 
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/005/544/770/original/profile-icon-design-free-vector.jpg" 
-            alt="Profile"
-            className="w-32 h-32 rounded-full border-4 border-blue-600 shadow-md object-cover"
-          />
+               <Avatar
+                sx={{ width: 150, height: 150, fontSize: 60 }}
+                className="border-4 border-blue-100"
+              >
+                {profile.name.split(' ').map(n => n[0]).join('')}
+              </Avatar>
           <IconButton
             onClick={handleOpen}
             size="small"
-            sx={{
-              position: 'absolute',
-              bottom: '4px',    
-              left: '50%',      
-              transform: 'translateX(-50%)', 
-              backgroundColor: '#22c55e',
-              color: 'blue',
-              borderRadius: '12px',
-              padding: '4px 12px',
-              fontSize: '0.75rem',
-              whiteSpace: 'nowrap', 
-              '&:hover': {
+              sx={{
+                position: 'absolute',
+                bottom: 6,
+                right: 8,
+                backgroundColor: 'black',
                 color: 'white',
-                fontWeight: 'bold',
-                backgroundColor: 'blue',
+                '&:hover': {
+                backgroundColor: '#1d4ed8',
+                color: 'black'
               },
             }}
           >
-            Edit Profile <Edit fontSize="inherit" sx={{ ml: 0.5 }} />
+            <Add fontSize="small" />
           </IconButton>
         </div>
         <div className="text-center md:text-left">
@@ -234,7 +229,7 @@ export function Profile() {
         </div>
       </section>
 
-      {/* About Section */}
+      
       <section id="about" className="max-w-6xl mx-auto mt-6 p-6 bg-white rounded-xl shadow animate-fade-in">
         <div className="flex justify-between items-center">
           <h3 className="text-xl font-bold text-blue-800 mb-3">About Me</h3>
@@ -290,7 +285,7 @@ export function Profile() {
         </div>
       </section>
 
-      {/* Education Section */}
+      
       <section id="education" className="max-w-6xl mx-auto mt-6 p-6 bg-white rounded-xl shadow animate-fade-in">
         <div className="flex justify-between items-center">
           <h3 className="text-xl font-bold text-blue-800 mb-4">Education</h3>
@@ -298,7 +293,7 @@ export function Profile() {
             startIcon={<Edit fontSize="small" />}
             onClick={() => {
               handleOpen();
-              setTab(4); // New tab for education
+              setTab(4); 
             }}
             size="small"
             sx={{
@@ -349,7 +344,7 @@ export function Profile() {
         </div>
       </section>
 
-      {/* Resume Section */}
+      
       <section id="resume" className="max-w-6xl mx-auto mt-6 p-6 bg-white rounded-xl shadow animate-fade-in">
         <div className="flex justify-between items-center">
           <h3 className="text-xl font-bold text-blue-800 mb-4">Resume</h3>
@@ -357,7 +352,7 @@ export function Profile() {
             startIcon={<Edit fontSize="small" />}
             onClick={() => {
               handleOpen();
-              setTab(5); // New tab for resume
+              setTab(5); 
             }}
             size="small"
             sx={{
@@ -376,7 +371,7 @@ export function Profile() {
         </div>
       </section>
 
-      {/* Applied Jobs Section */}
+      
       <section id="jobs" className="max-w-6xl mx-auto mt-6 mb-10 p-6 bg-white rounded-xl shadow animate-fade-in">
         <div className="flex justify-between items-center">
           <h3 className="text-xl font-bold text-blue-800 mb-4">Applied Jobs</h3>
@@ -384,7 +379,7 @@ export function Profile() {
             startIcon={<Edit fontSize="small" />}
             onClick={() => {
               handleOpen();
-              setTab(6); // New tab for applied jobs
+              setTab(6);
             }}
             size="small"
             sx={{
@@ -406,7 +401,7 @@ export function Profile() {
         </div>
       </section>
 
-      {/* Modal */}
+      
       <Modal open={open} onClose={handleClose}>
         <Box
           sx={{
@@ -448,7 +443,7 @@ export function Profile() {
             <Tab label="Applied Jobs" />
           </Tabs>
 
-          {/* Profile Tab */}
+          
           {tab === 0 && (
             <Box mt={2}>
               <TextField fullWidth label="Name" name="name" value={profile.name} onChange={handleChange} margin="normal" />
@@ -460,7 +455,7 @@ export function Profile() {
             </Box>
           )}
 
-          {/* Experience Tab */}
+          
           {tab === 1 && (
             <Box mt={2}>
               {profile.experience.map((exp, index) => (
@@ -478,7 +473,7 @@ export function Profile() {
             </Box>
           )}
 
-          {/* Skills Tab */}
+          
           {tab === 2 && (
             <Box mt={2}>
               {profile.skills.map((skill, index) => (
