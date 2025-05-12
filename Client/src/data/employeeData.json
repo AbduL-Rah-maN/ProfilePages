@@ -1,0 +1,16 @@
+{
+  "_id": "507f1f77bcf86cd799439011",
+  "name": "John Cena",
+  "email": "john@email.com",
+  "phone": "+91 989 786 6667",
+  "company": "Tech Solutions Inc.",
+  "role": "employer",
+  "settings": {
+    "receiveApplicationEmails": true,
+    "darkMode": false
+  },
+  "createdJobs": [
+    { "id": "1", "title": "Senior Frontend Developer", "status": "Active" },
+    { "id": "2", "title": "UX Designer", "status": "Closed" }
+  ]
+}
